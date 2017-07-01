@@ -139,7 +139,7 @@ long getDistance() {
 }
 
 void doCollisionAvoidance(int distance) {
-  if(distance < 10 && distance >=0 ) {
+  if(distance < 20 && distance >=0 ) {
     Serial.println("Object detected!");
 
     // Turn ON LED (LOW is ON for some weird reason)
