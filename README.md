@@ -14,11 +14,13 @@ My implementation of [HackerBoxes 0013: Autosport](https://www.instructables.com
 
 [Blynk](http://www.blynk.cc/) is a mobile app used for rapid IoT prototyping. To interface with the HackerBoxCar sketch, configure the Blynk app as shown in the screenshots below.
 
-<img src="https://github.com/drejkim/HackerBoxCar/blob/master/images/Blynk_01.png?raw=true" style="float: left; width: 250px; margin: 10px">
-<img src="https://github.com/drejkim/HackerBoxCar/blob/master/images/Blynk_02.png?raw=true" style="float: left; width: 250px; margin: 10px">
-<img src="https://github.com/drejkim/HackerBoxCar/blob/master/images/Blynk_03.png?raw=true" style="float: left; width: 250px; margin: 10px">
-<img src="https://github.com/drejkim/HackerBoxCar/blob/master/images/Blynk_04.png?raw=true" style="float: left; width: 250px; margin: 10px">
-<img src="https://github.com/drejkim/HackerBoxCar/blob/master/images/Blynk_05.png?raw=true" style="float: left; width: 250px; margin: 10px">
-<img src="https://github.com/drejkim/HackerBoxCar/blob/master/images/Blynk_06.png?raw=true" style="float: left; width: 250px; margin: 10px">
-<img src="https://github.com/drejkim/HackerBoxCar/blob/master/images/Blynk_07.png?raw=true" style="float: left; width: 250px; margin: 10px">
-<img src="https://github.com/drejkim/HackerBoxCar/blob/master/images/Blynk_08.png?raw=true" style="float: left; width: 250px; margin: 10px">
+<div align="left">
+  <img src="https://github.com/drejkim/HackerBoxCar/blob/master/images/Blynk_01.png?raw=true" width="250px">
+  <img src="https://github.com/drejkim/HackerBoxCar/blob/master/images/Blynk_02.png?raw=true" width="250px">
+  <img src="https://github.com/drejkim/HackerBoxCar/blob/master/images/Blynk_03.png?raw=true" width="250px">
+  <img src="https://github.com/drejkim/HackerBoxCar/blob/master/images/Blynk_04.png?raw=true" width="250px">
+  <img src="https://github.com/drejkim/HackerBoxCar/blob/master/images/Blynk_05.png?raw=true" width="250px">
+  <img src="https://github.com/drejkim/HackerBoxCar/blob/master/images/Blynk_06.png?raw=true" width="250px">
+  <img src="https://github.com/drejkim/HackerBoxCar/blob/master/images/Blynk_07.png?raw=true" width="250px">
+  <img src="https://github.com/drejkim/HackerBoxCar/blob/master/images/Blynk_08.png?raw=true" width="250px">
+</div>
