@@ -34,6 +34,7 @@ long duration, distance; // Duration used to calculate distance
 boolean leftIRstate, rightIRstate;
 
 boolean autonomousMode = false;
+boolean lineFollowMode = false;
 
 void setup()
 {
@@ -62,7 +63,11 @@ void loop()
     doCollisionAvoidance(distance);
   }
 
-  // Add a small delay between readings
+  if(lineFollowMode) {
+    doLineFollowing(leftIRstate, rightIRstate);
+  }
+
+  // Add a delay between readings
   delay(10);
 }
 
@@ -183,6 +188,32 @@ void useIRSensors() {
   Serial.println("\t");
 }
 
+void doLineFollowing(boolean leftIRstate, boolean rightIRstate) {
+  // Line following logic is as follows:
+  //   - If both sensors sense white, move forward
+  //   - If left sensor senses black, move left
+  //   - If right sensor senses black, move right
+  //   - Else, halt
+  // When sensor senses black, state is HIGH
+
+  if(!leftIRstate && !rightIRstate) {
+    Serial.println("Moving forward!");
+    forward();
+  }
+  if(leftIRstate && !rightIRstate) {
+    Serial.println("Turning left!");
+    left();
+  }
+  if(!leftIRstate && rightIRstate) {
+    Serial.println("Turning right!");
+    right();
+  }
+  else if(leftIRstate && rightIRstate) {
+    Serial.println("Halt!");
+    halt();
+  }
+}
+
 BLYNK_WRITE(V0)
 {
   if(param[0])
@@ -223,6 +254,18 @@ BLYNK_WRITE(V10)
   }
   else {
     autonomousMode = false;
+    halt();
+  }
+}
+
+BLYNK_WRITE(V12)
+{
+  if(param[0]) {
+    lineFollowMode = true;
+    forward();
+  }
+  else {
+    lineFollowMode = false;
     halt();
   }
 }
