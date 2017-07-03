@@ -1,4 +1,4 @@
-int IR_PIN_DIGITAL = 2; // maps to GPIO4... see http://nodemcu.readthedocs.io/en/dev/en/modules/gpio/
+int IR_PIN_DIGITAL = 14; // Maps to D5
 int IR_PIN_ANALOG = A0;
 
 void setup() {
