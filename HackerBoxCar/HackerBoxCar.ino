@@ -16,7 +16,8 @@
 #define PIN_LEFT_MOTOR_DIR    2
 #define PIN_ECHO 12 // Echo Pin
 #define PIN_TRIGGER 13 // Trigger Pin
-#define PIN_LED  16 // Onboard LED
+#define PIN_RIGHT_IR 14 // Right IR sensor digital pin (D5)
+#define PIN_LEFT_IR 16 // Left IR sensor digital pin (D0)
 
 // You should get Auth Token in the Blynk App.
 // Go to the Project Settings (nut icon).
@@ -28,6 +29,9 @@ char pass[] = "WIFI PASSWORD";
 int maximumRange = 200; // Maximum range needed
 int minimumRange = 0; // Minimum range needed
 long duration, distance; // Duration used to calculate distance
+
+// For IR sensors
+boolean leftIRstate, rightIRstate;
 
 boolean autonomousMode = false;
 
@@ -43,10 +47,8 @@ void setup()
   pinMode(PIN_LEFT_MOTOR_DIR, OUTPUT);
   pinMode(PIN_TRIGGER, OUTPUT);
   pinMode(PIN_ECHO, INPUT);
-  pinMode(PIN_LED, OUTPUT);
-
-  // Onboard LED is off when pin is HIGH??
-  digitalWrite(PIN_LED, HIGH);
+  pinMode(PIN_LEFT_IR, INPUT);
+  pinMode(PIN_RIGHT_IR, INPUT);
 }
 
 void loop()
@@ -54,6 +56,7 @@ void loop()
   Blynk.run();
 
   useRangeFinder();
+  useIRSensors();
 
   if(autonomousMode) {
     doCollisionAvoidance(distance);
@@ -142,9 +145,6 @@ void doCollisionAvoidance(int distance) {
   if(distance < 20 && distance >=0 ) {
     Serial.println("Object detected!");
 
-    // Turn ON LED (LOW is ON for some weird reason)
-    digitalWrite(PIN_LED, LOW);
-
     halt();
     delay(200);
 
@@ -154,7 +154,6 @@ void doCollisionAvoidance(int distance) {
     halt();
   }
   else {
-    digitalWrite(PIN_LED, HIGH);
     forward();
   }
 }
@@ -170,6 +169,18 @@ void turnRandom() {
     Serial.println("Turning left!");
     left();
   }
+}
+
+void useIRSensors() {
+  leftIRstate = digitalRead(PIN_LEFT_IR);
+  rightIRstate = digitalRead(PIN_RIGHT_IR);
+
+  Serial.print("IR left: ");
+  Serial.print(leftIRstate);
+  Serial.print("\t");
+  Serial.print("IR right: ");
+  Serial.print(rightIRstate);
+  Serial.println("\t");
 }
 
 BLYNK_WRITE(V0)
