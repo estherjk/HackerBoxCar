@@ -8,6 +8,7 @@ My implementation of [HackerBoxes 0013: Autosport](https://www.instructables.com
 
 * HackerBoxCar: Contains the full implementation of the car
 * NodeMCUBlink: Blinks the onboard LED to check that the NodeMCU module is working
+* NodeMCUIR: Tests a single IR sensor by either printing its digital or analog value
 * NodeMCUPing: Tests the operation of the range finder by printing the distance to any object in cm in the serial monitor
 
 ## Blynk app
