@@ -58,6 +58,9 @@ void loop()
   if(autonomousMode) {
     doCollisionAvoidance(distance);
   }
+
+  // Add a small delay between readings
+  delay(10);
 }
 
 void halt()
@@ -113,9 +116,6 @@ void useRangeFinder() {
     Serial.print("distance [cm]: ");
     Serial.println(distance);
   }
-
-  // Delay 50ms before next reading.
-  delay(50);
 }
 
 long getDistance() {
