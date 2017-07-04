@@ -9,8 +9,8 @@ void setup() {
 
 void loop() {
   // Read either the digital or analog value from the IR sensor
-  // To read the digital value, connect D0 to GPIO4 (on board) and call readDigitalValue() in code
-  // To read the analog value, connect A0 to A0 (on board) and call readAnalogValue() in code
+  // To read the digital value, connect the sensor D0 pin to the GPIO D5 pin and call readDigitalValue() in code
+  // To read the analog value, connect the sensor A0 pin to the board's A0 pin and call readAnalogValue() in code
 
   readDigitalValue();
   // readAnalogValue();
