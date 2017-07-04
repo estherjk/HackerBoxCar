@@ -2,7 +2,19 @@
 
 My implementation of [HackerBoxes 0013: Autosport](https://www.instructables.com/id/HackerBoxes-0013-Autosport).
 
-![HackerBoxCar](https://github.com/drejkim/HackerBoxCar/blob/master/images/HackerBoxCar.jpg?raw=true)
+<div align="middle">
+  <img src="https://github.com/drejkim/HackerBoxCar/blob/master/images/HackerBoxCar.jpg?raw=true" width="360px">
+</div>
+
+The car is capable of three modes:
+
+* Remote-control mode, where the Blynk mobile app is used to control the direction that the car moves (forward, left, right, reverse)
+* Line-following mode, where the car's IR sensors detect a black line to control its path
+  * *Note: The car performs best with gradual (as opposed to sharp) curves*
+* Autonomous mode, where the car uses an ultrasonic range sensor to detect and avoid objects
+  * *Note: when the car detects an object, it will randomly turn left or right in order to attempt to avoid an object*
+
+Take a look at the [video](https://youtu.be/K7Yosm08pu0) to see it in action.
 
 ## Directory structure
 
